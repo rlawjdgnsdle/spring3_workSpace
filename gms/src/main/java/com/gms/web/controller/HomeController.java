@@ -1,0 +1,35 @@
+package com.gms.web.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller // 리퀘스트와 세션을 자동으로 먹이겠다는 뜻이랍니다람쥐썬더
+@SessionAttributes("context") // 
+public class HomeController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	enum Resources{
+		CONTEXT,CSS,JS,IMG
+}
+	@RequestMapping(value = "/", method = RequestMethod.GET) // value = url 임 
+	public String home(HttpSession session, HttpServletRequest request) { // 객체로 정의됨(모델!!) 모델 안에 리퀘스트가 포장되어 있읍니다…
+		String context = request.getContextPath();
+		logger.info("Welcome home! The client locale is {}.", context);
+		session.setAttribute("context", context);
+		
+		//*model.addAttribute("serverTime", "" );
+		
+		return "home";
+	}
+	
+}

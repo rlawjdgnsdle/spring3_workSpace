@@ -1,0 +1,6 @@
+package com.gms.web.controller;
+
+@Controller
+public class MemberController {
+
+}
