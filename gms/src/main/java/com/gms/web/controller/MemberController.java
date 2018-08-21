@@ -32,7 +32,7 @@ public class MemberController {
 
 	@RequestMapping("/logout")
 	public void logout() {}
-	
+	//
 	@RequestMapping("/move")
 	public void move() {}
 	
