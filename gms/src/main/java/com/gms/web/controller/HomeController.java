@@ -29,7 +29,7 @@ public class HomeController {
 		
 		//*model.addAttribute("serverTime", "" );
 		
-		return "home";
+		return "main";
 	}
 	
 }
