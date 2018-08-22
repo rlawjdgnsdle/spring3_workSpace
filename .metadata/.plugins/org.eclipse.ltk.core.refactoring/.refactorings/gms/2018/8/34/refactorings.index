@@ -1,1 +1,28 @@
 1534752137221	Rename package 'com.gms.web'
+1534822786427	Move file
+1534822788525	Move file
+1534822791804	Delete element
+1534823794280	Rename type 'Image'
+1534823798467	Rename type 'Member'
+1534824053979	Rename type 'ImageVO'
+1534824058689	Rename type 'MemberVO'
+1534824265601	Move compilation unit
+1534835042509	Delete elements
+1534835043908	Delete element
+1534835048499	Delete elements
+1534835822677	Move files
+1534835824737	Delete element
+1534835831447	Delete element
+1534835836442	Delete elements
+1534835837229	Delete element
+1534835852836	Delete element
+1534836005767	Move files
+1534838821120	Move files
+1534838848368	Move files
+1534839301469	Delete elements
+1534905902141	Delete element
+1534916324523	Rename resource 'head.jsp'
+1534916338899	Rename resource 'menu-box.jsp'
+1534916344962	Delete elements
+1534916397029	Rename resource 'content-box.jsp'
+1534916406631	Copy file
