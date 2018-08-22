@@ -6,7 +6,7 @@ app = {
 			app.session.context(x);  // 저장장소 각자 사용자의 모니터 세션에다가 제일 먼저 저장해야하는 것 : 경로
 			app.onCreate();
 			
-		},
+		},//
 		onCreate : ()=>{//
 			alert('step 3');
 			app.setContentView();
