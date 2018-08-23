@@ -26,15 +26,14 @@ public class MemberController {
 
 	@RequestMapping("/remove")
 	public void remove() {}
-//
+
 	@RequestMapping("/login")
 	public void login() {}
 
 	@RequestMapping("/logout")
-	public void logout() {}
-	//
-	@RequestMapping("/move")
-	public void move() {}
+	public void logout() {
+		
+	}
 	
 	@RequestMapping("/fileUpload")
 	public void fileUpload() {}
