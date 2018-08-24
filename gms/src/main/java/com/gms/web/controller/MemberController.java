@@ -11,7 +11,7 @@ import com.gms.web.domain.MemberDTO;
 @RequestMapping("/member")
 public class MemberController {
 	static final Logger logger = LoggerFactory.getLogger(MemberController.class);
-	@Autowired MemberDTO member; 
+	@Autowired MemberDTO member;  // 싱글톤에있는걸 GETINSTANCE 한것?
 	// MemberDTO m = new MemberDTO(); ← 최 악 의 코 드 IOC에선 스프링이 객체를 다 만드는데 개발자가 만들이유가 없습니다
 	@RequestMapping("/add")
 	public void add() {}
@@ -26,13 +26,13 @@ public class MemberController {
 	public void retrieve() {}
 
 	@RequestMapping("/count")
-	public void count() {}
+	public void count() {}//S//
 
 	@RequestMapping("/modify")
 	public void modify() {}
 
 	@RequestMapping("/remove")
-	public void remove() {}
+	public void remove() {}//asas
 
 	public String login() {
 		logger.info("\n --------- MemberController {} !!--------","login()");
