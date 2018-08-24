@@ -11,19 +11,19 @@ app = {
 			console.log('step 3');
 			app.setContentView();
 			$('#login_btn').click(()=>{
-				location.href = app.x()+"/move/member/login"; 
+				location.href = app.x()+'/move/auth/member/login';
 			}); 
 			$('#login_submit').click(()=>{
-				location.href = app.x()+"/move/member/auth"; 
+				location.href = app.x()+'/member/login';
 			}); 
 			$('#join_btn').click(()=>{
-				location.href = app.x()+"/move/member/add";
+				location.href = app.x()+"/move/auth/member/add";
 			});
 			$('#joinBth').click(()=>{
-				location.href = app.x()+"/move/member/auth";
+				location.href = app.x()+'/member/login';
 			});
 			$('#logout_btn').click(()=>{
-				location.href = app.x();
+				location.href = app.x()+'/member/logout';
 			});
 			
 		},		

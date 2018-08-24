@@ -35,14 +35,11 @@ public class HomeController {
 			@PathVariable String prefix,
 			@PathVariable String dir,
 			@PathVariable String page) {
-		logger.info("HomeController ::: move() {} ","ENTER");
-		String ret = "public:"+dir+"/"+page+".tiles";
-		System.out.println("ret : "+ret);
-		/*if(page.equals("login")||page.equals("add")) {*/
-			if(page.equals("auth")) {
-			ret = "auth:"+dir+"/"+page+".tiles";
-			System.out.println("if 문을 탄 ret : "+ret);
-		}	
-		return ret;
+		logger.info("\n --------- HomeController {} !!--------","move()");
+		String path = prefix+":"+dir+"/"+page+".tiles";
+		logger.info("\n move page >>> {}",path);
+		return path;
 	}
+	
 }
+
