@@ -41,6 +41,9 @@
 				</list>
 				</property> 
 	</bean>
+	
+	
+	
 	<!-- 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
@@ -50,8 +53,14 @@
 	<context:component-scan base-package="com.gms.web" /> <!-- 컴포턴트를 스캔하는 친구 -->
 	<!-- 간혹 .controller로 자동설정되는 경우가 있는데 이러면 controller 에서밖에 불러오지 못한다… -->
 	<!-- 컴포넌트를 스캰해서 리턴타입을  Bean 으로 답아버림 -->
-	<!-- 루트 컨텍스트 안에 들어와있는 객체의 리턴타입은 전부 전부 전부 전부 전~부 Bㄷan 타입이다 -->
-
-
+	<!-- 루트 컨텍스트 안에 들어와있는 객체의 리턴타입은 전부 전부 전부 전부 전~부 Bean 타입이다 -->
+	
+<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
+	<property name="url" value="jdbc:mysql://localhost:3306/mariadb"></property>
+	<property name="username" value="mariadb"></property>
+	<property name="password" value="mariadb"></property>
+		</bean>
 
 </beans>
