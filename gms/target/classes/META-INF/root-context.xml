@@ -50,9 +50,10 @@
 		<property name="suffix" value=".jsp" /> 요것이 include 라고 생각하시면 됩니다
 	</bean>
 	 -->
-	<context:component-scan base-package="com.gms.web" /> <!-- 컴포턴트를 스캔하는 친구 -->
+	<context:component-scan base-package="com.gms.web" />
+	<!-- 컴포턴트를 스캔하는 친구 -->
 	<!-- 간혹 .controller로 자동설정되는 경우가 있는데 이러면 controller 에서밖에 불러오지 못한다… -->
-	<!-- 컴포넌트를 스캰해서 리턴타입을  Bean 으로 답아버림 -->
+	<!-- 컴포넌트를 스캰해서 리턴타입을  Bean 으로 답아버림 <-->
 	<!-- 루트 컨텍스트 안에 들어와있는 객체의 리턴타입은 전부 전부 전부 전부 전~부 Bean 타입이다 -->
 	
 <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->

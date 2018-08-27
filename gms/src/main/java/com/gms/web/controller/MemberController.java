@@ -26,7 +26,7 @@ public class MemberController {
 	public void retrieve() {}
 
 	@RequestMapping("/count")
-	public void count() {}//S//
+	public void count() {}
 
 	@RequestMapping("/modify")
 	public void modify() {}

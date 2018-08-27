@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="com.gms.web.repository.MemberDAO"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-<fullyQualifiedTypeName name="com.gms.web.domain.MemberDTO"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -18,4 +17,8 @@
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="com.sun.istack.internal.logging.Logger"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.gms.web.domain.MemberDTO"/>
 </qualifiedTypeNameHistroy>
