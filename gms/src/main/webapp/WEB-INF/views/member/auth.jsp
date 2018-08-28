@@ -37,12 +37,11 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="#">==</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">마이페이지 <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> ${member.memname} 의 마이페이지 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a id="logout_btn" href="#">로그아웃</a></li>
-            <!-- <li><a id="join_btn" href="#">회원가입</a></li> -->
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>

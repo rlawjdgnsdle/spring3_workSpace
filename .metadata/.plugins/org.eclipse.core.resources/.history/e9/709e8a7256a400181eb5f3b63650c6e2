@@ -1,8 +1,0 @@
-package com.gms.web.domain;
-import lombok.Data;
-
-
-@Data
-public class Member {
-	private String memberId,teamId,name,ssn,roll,pass,age,gender,subject;
-}

@@ -17,7 +17,8 @@
         <p>&copy; Company 2017</p>
       </footer>
       <script>
-   
+   app.init('${context}');
+   app.setMember('${member}');
       </script>
       
 </body>

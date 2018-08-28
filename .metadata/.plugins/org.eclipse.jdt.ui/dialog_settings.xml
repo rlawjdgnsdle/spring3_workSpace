@@ -9,6 +9,9 @@
 		<item value="false" key="updateTextualMatches"/>
 		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item value="false" key="GenerateJavadoc"/>
+	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>
 		<item value="true" key="group_libraries"/>
@@ -54,10 +57,10 @@
 		<item value="true" key="expanded0"/>
 	</section>
 	<section name="ClasspathContainerSelectionPage">
-		<item value="2" key="index"/>
+		<item value="4" key="index"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="0" key="pageIndex"/>
+		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
@@ -65,10 +68,22 @@
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="JavaSearchPage">
-		<item value="1" key="HISTORY_SIZE"/>
+		<item value="2" key="HISTORY_SIZE"/>
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="11" key="INCLUDE_MASK"/>
 		<section name="HISTORY0">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="11" key="includeMask"/>
+			<item value="ConnTest" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="0" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY1">
 			<item value="false" key="isCaseSensitive"/>
 			<item value="" key="javaElement"/>
 			<item value="0" key="scope"/>

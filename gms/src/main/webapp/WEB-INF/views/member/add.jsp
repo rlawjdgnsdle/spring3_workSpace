@@ -3,14 +3,14 @@
 	<h2>회원가입</h2>
 	<form id="joinForm" name="joinForm">
 	ID<br>
-	<input type="text" name="userid"/><br>
+	<input type="text" name="memid" required /><br>
 	비밀번호<br>
-	<input type="text" name="pass" /><br>
+	<input type="text" name="pass" required /><br>
 	이름 <br>
-	<input type="text" name="name"/><br>
+	<input type="text" name="memname" required /><br>
 	주민번호<br>
-	<input type="text" name="ssn" /><br>	
-	<input id="joinBth" type="button" value="제출"/>
+	<input type="text" name="ssn" required /><br>	
+	
 	<br>
 소속팀
 	<input type="radio" name="teamid" 
@@ -44,5 +44,6 @@
 	<input type="checkbox" name="subject" value="linux"/> Linux
 	<input type="checkbox" name="subject" value="html"/> HTML
 	<input type="checkbox" name="subject" value="spring"/> Spring
+	<input id="joinBth" type="button" value="제출"/>
 	</form>
 </div>

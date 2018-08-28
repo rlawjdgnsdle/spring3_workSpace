@@ -23,7 +23,7 @@ public class HomeController {
 	enum Resources{
 		CONTEXT,CSS,JS,IMG
 }
-	@RequestMapping(value = "/", method = RequestMethod.GET) // value = url 임 
+	@RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST}) // value = url 임 
 	public String home(HttpSession session, HttpServletRequest request) { // 객체로 정의됨(모델!!) 모델 안에 리퀘스트가 포장되어 있읍니다…
 		String context = request.getContextPath();
 		logger.info("Welcome home! The client locale is {}.", context);

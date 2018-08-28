@@ -10,21 +10,44 @@ app = {
 		onCreate : ()=>{
 			console.log('step 3');
 			app.setContentView();
-			$('#login_btn').click(()=>{
+			$('#login_btn').click(()=>{ //로그인버튼
 				location.href = app.x()+'/move/auth/member/login';
 			}); 
-			$('#login_submit').click(()=>{
-				location.href = app.x()+'/member/login';
+			$('#login_submit').click(()=>{ // 제출버튼
+				location.href = app.x()+'/member/login/'
+				+document.loginForm.memid.value+'/'
+				+document.loginForm.pass.value;
 			}); 
+			
 			$('#join_btn').click(()=>{
 				location.href = app.x()+"/move/auth/member/add";
 			});
-			$('#joinBth').click(()=>{
-				location.href = app.x()+'/member/login';
+			
+			$('#joinBth').click(function(){
+				alert('joinBth click');
+				$('#joinBth')
+				.attr({
+					action:app.x()+'member/add',
+					method:"POST"
+				})
+				.submit();
+				location.href = app.x()+"/move/auth/member/add";
+			/*	옛날방식
+			 	$('#joinBth')
+				.click(()=>{
+						var form = document.getElementById('joinForm');
+						form.action = x.context+"/member/add";
+						form.method = "POST"; 
+						form.submit();
+					});*/
+				
+				
 			});
+			
 			$('#logout_btn').click(()=>{
 				location.href = app.x()+'/member/logout';
 			});
+		
 			
 		},		
 		setContentView : ()=>{

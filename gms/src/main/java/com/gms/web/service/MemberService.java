@@ -14,6 +14,6 @@ public interface MemberService {
 	public int count(Map<?, ?>p);
 	public void modify(Map<?, ?>p);
 	public void remove(Map<?, ?>p);
-	public boolean login(Map<?, ?>p);
+	public MemberDTO login(Map<?, ?>p);
 
 }
