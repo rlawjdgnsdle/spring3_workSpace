@@ -16,10 +16,11 @@
 		VALUES (#{memid},#{pass},#{memname},#{age},#{ssn},#{teamid},#{roll},#{gender},#{subject})
 	</select>
 	<select id="update" >
-	UPDATE MEMBER SET PASS = #{pass} %s TEAMID #{teamid} ROLL = #{roll} WHERE MEMID LIKE #{memid} ";
-	</select>
+	INSERT INTO MEMBER (MEMID, PASS, MEMNAME, AGE, SSN, TEAMID, ROLL, GENDER, SUBJECT)
+	VALUES (#{memid},#{pass},#{memname},#{age},#{ssn},#{teamid},#{roll},#{gender},#{subject})
+	<!-- UPDATE MEMBER SET PASS LIKE #{pass}, TEAMID LIKE #{teamid}, ROLL LIKE #{roll} WHERE MEMID LIKE #{memid} -->
+		</select>
 	<select id="delete" >
 		DELETE FROM MEMBER WHERE MEMID LIKE #{memid} AND PASSWORD LIKE #{pass}
 	</select>
-
 </mapper>

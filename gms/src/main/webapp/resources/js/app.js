@@ -1,5 +1,6 @@
 "use strict"; // 엄격한 문법을 적용하세요(근엄) 틀리면 에러처리하라는 명령어(진지)
 var app = app  || {}; 
+var user = user || {}; 
 app = {
 		init : x =>{
 			console.log('step 1');
@@ -18,20 +19,20 @@ app = {
 				+document.loginForm.memid.value+'/'
 				+document.loginForm.pass.value;
 			}); 
-			$('#updateForm').click(()=>{
-				alert('update button');
-				location.href = app.x()+"/member/modify"
+			$('#mypage').click(()=>{
+				alert('mypage button');
+				location.href = app.x()+"/member/modify";
 				
 			});	
 			$('#join_btn').click(()=>{
 				location.href = app.x()+"/move/auth/member/add";
 			});	
 				
-			$('#joinBth').click(function(){
+			$('#joinBth').click(()=>{
 				alert('joinBth click');
 				$('#joinForm')
 				.attr({
-					action:app.x()+'/member/modify',
+					action:app.x()+'/member/add',
 					method:"POST"
 				}).submit();
 				
@@ -85,4 +86,10 @@ app.c = ()=>{
 app.i = ()=>{
 	return app.session.path('img');
 };
-					
+		
+user.session = x=>{
+	$.each(x, (k,v)=>{
+		sessionStorage.setItem(k, v);
+			});
+	alert(sessionStorage.getItem('memid'));
+}

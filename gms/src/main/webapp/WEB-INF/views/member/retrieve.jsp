@@ -5,11 +5,11 @@
 			
 			<td rowspan="3"><img id="profile" src="${img}${profile}" /></td>
 			<td>아이디</td>
-			<td colspan="2">${user.memberId}</td>
+			<td colspan="2">${member.memberId}</td>
 		</tr>
 		<tr>
 			<td>이름</td>
-			<td colspan="2">${user.name}</td>
+			<td colspan="2">${member.name}</td>
 		</tr>
 		<tr>
 			<td><a>비밀번호</a></td>
@@ -17,15 +17,15 @@
 		</tr>
 		<tr>
 			<td>나이</td>
-			<td>${user.age}</td>
+			<td>${member.age}</td>
 			<td><a>팀명</a></td>
-			<td>${user.teamId}</td>
+			<td>${member.teamId}</td>
 		</tr>
 		<tr>
 		<td>성별</td>
-		<td>${user.gender}</td>
+		<td>${member.gender}</td>
 		<td><a>역활</a></td>
-		<td>${user.roll}</td>
+		<td>${member.roll}</td>
 		</tr>
 	</table>
 			${img}

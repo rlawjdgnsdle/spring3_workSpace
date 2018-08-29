@@ -8,30 +8,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gms.web.domain.MemberDTO;
-import com.gms.web.repository.MemberDAO;
+import com.gms.web.mapper.MemberMapper;
 import com.gms.web.service.MemberService;
 
 @Service
 public class MemberServiceImpl implements MemberService {
 	@Autowired
-	MemberDAO memberDAO;
+	MemberMapper memberDAO;
 	private static final Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 	@Override
 	public void add(MemberDTO p) {
 		logger.info("==ServiceImpl==");
 		String ssn = p.getSsn();
 		System.out.println("ssn : "+ssn);
+		System.out.println(""+new SimpleDateFormat("yyyy").format(new Date()));
 		String gender = String.valueOf(ssn.charAt(7));
 		if(Integer.parseInt(gender)+2%2==1) {
-			gender = "남";
+			gender = "남자";
 		}else {
-			gender = "여";
+			gender = "여자";
 		}
+		System.out.println("담겨야 할 gender값은? : "+gender);
+		System.out.println("담겨야 할 age 값은? : "+String.valueOf(
+				Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date()))+ 1
+				- (Integer.parseInt(ssn.substring(0,2)) + 1900)));
+		
 		p.setAge(String.valueOf(
 				Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date()))+ 1
 				- (Integer.parseInt(ssn.substring(0,2)) + 1900)));
 		p.setGender(gender);
 		memberDAO.add(p);
+			
 	}
 
 	@Override
@@ -48,7 +55,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberDTO retrieve(Map<?, ?> p) {
-		System.out.println("==서비스retrieve== MemberDTO로 갈 : " + p.get("MEMID"));
+		System.out.println("==서비스retrieve== MemberDTO로 갈 : " + p.get("memid"));
 		return memberDAO.selectOne(p);
 	}
 
