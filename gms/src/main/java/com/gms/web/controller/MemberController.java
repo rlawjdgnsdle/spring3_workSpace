@@ -30,7 +30,6 @@ public class MemberController {
 		System.out.println("name is "+member.getMemname());
 		memberSerivce.add(member);
 	}
-	
 	@RequestMapping("/list")
 	public void list() {}
 	
@@ -48,7 +47,7 @@ public class MemberController {
 	public void modify(@ModelAttribute MemberDTO member) {
 		memberSerivce.modify(member);
 	}
-
+	
 	@RequestMapping("/remove")
 	public void remove() {}
 	

@@ -39,7 +39,7 @@ private static final String ns = "com.gms.web.mapper.MemberMapper"; // mapper.xm
 		System.out.println("==MemberDTO selectOne== 서비스 retrieve 에서 받아온 "+p.get("MEMID"));
 		return (MemberDTO) sqlSession.selectOne(ns+".selectOne",p);
 	}
-
+//
 	@Override
 	public int count(Map<?, ?> p) {
 		// TODO Auto-generated method stub

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 /**
  * Handles requests for the application home page.
  */
-@Controller // 리퀘스트와 세션을 자동으로 먹이겠다는 뜻이랍니다람쥐썬더
+@Controller // 리퀘스트와 세션을 자동으로 먹이겠다는 뜻이랍니다
 @SessionAttributes("context") 
 public class HomeController {
 	
