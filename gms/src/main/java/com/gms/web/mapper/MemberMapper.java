@@ -17,13 +17,12 @@ public class MemberMapper implements MemberDAO{
 private static final String ns = "com.gms.web.mapper.MemberMapper"; // mapper.xml 의 namespace에서 온 것
 	@Override
 	public void add(MemberDTO p) {
-		SqlSession sqlSession = factory.openSession();
-		System.out.println("==MemberDTO add==");
-		sqlSession.insert(ns+".add",p);
+		System.out.println("==MemberDTO add=="+"///=="+ns+".add");
+		factory.openSession().insert(ns+".add",p);
 	}
-
+	
 	@Override
-	public List<?> selectlist(Map<?, ?> p) {
+	public List<?> selectList(Map<?, ?> p) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -33,7 +32,7 @@ private static final String ns = "com.gms.web.mapper.MemberMapper"; // mapper.xm
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public MemberDTO selectOne(Map<?, ?> p) {
 		SqlSession sqlSession = factory.openSession();
@@ -48,15 +47,13 @@ private static final String ns = "com.gms.web.mapper.MemberMapper"; // mapper.xm
 	}
 
 	@Override
-	public void update(Map<?, ?> p) {
-		// TODO Auto-generated method stub
+	public void update(MemberDTO p) {
 		
 	}
 
 	@Override
-	public void delete(Map<?, ?> p) {
+	public void delete(MemberDTO p) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

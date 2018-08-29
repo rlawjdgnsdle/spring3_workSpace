@@ -5,35 +5,61 @@ app = {
 			console.log('step 1');
 			app.session.context(x);  // 저장장소 각자 사용자의 모니터 세션에다가 제일 먼저 저장해야하는 것 : 경로
 			app.onCreate();
-			
-		},
+				
+		},		
 		onCreate : ()=>{
 			console.log('step 3');
 			app.setContentView();
-			$('#login_btn').click(()=>{
+			$('#login_btn').click(()=>{ //로그인버튼
 				location.href = app.x()+'/move/auth/member/login';
 			}); 
-			$('#login_submit').click(()=>{
-				location.href = app.x()+'/member/login';
+			$('#login_submit').click(()=>{ // 제출버튼
+				location.href = app.x()+'/member/login/'
+				+document.loginForm.memid.value+'/'
+				+document.loginForm.pass.value;
 			}); 
+			$('#updateForm').click(()=>{
+				alert('update button');
+				location.href = app.x()+"/member/modify"
+				
+			});	
 			$('#join_btn').click(()=>{
 				location.href = app.x()+"/move/auth/member/add";
-			});
-			$('#joinBth').click(()=>{
-				location.href = app.x()+'/member/login';
-			});
+			});	
+				
+			$('#joinBth').click(function(){
+				alert('joinBth click');
+				$('#joinForm')
+				.attr({
+					action:app.x()+'/member/modify',
+					method:"POST"
+				}).submit();
+				
+			/*	옛날방식
+			 	$('#joinBth')
+				.click(()=>{
+						var form = document.getElementById('joinForm');
+						form.action = x.context+"/member/add";
+						form.method = "POST"; 
+						form.submit();
+					});*/
+				
+				
+			});	
+				
 			$('#logout_btn').click(()=>{
 				location.href = app.x()+'/member/logout';
-			});
-			
+			});	
+				
+				
 		},		
 		setContentView : ()=>{
-			
+				
 			console.log('step 4 : '+app.j());
-		}
-		
-};
-app.session = {
+		}		
+				
+};				
+app.session = {	
 		context : x=>{
 			console.log('step 2 : '+x);
 			sessionStorage.setItem('context',x);
@@ -59,3 +85,4 @@ app.c = ()=>{
 app.i = ()=>{
 	return app.session.path('img');
 };
+					

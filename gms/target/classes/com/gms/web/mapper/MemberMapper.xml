@@ -4,21 +4,21 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gms.web.mapper.MemberMapper">
 	<select id="selectOne" resultType="com.gms.web.domain.MemberDTO">
-		SELECT * FROM MEMBER WHERE MEMID LIKE #{MEMID}
+		SELECT * FROM MEMBER WHERE MEMID LIKE #{memid}
 	</select>
 	<select id="login" resultType="com.gms.web.domain.MemberDTO">
 		SELECT MEMID, TEAMID, MEMNAME, AGE, ROLL, PASS, SSN, GENDER FROM MEMBER
-		WHERE MEM_ID LIKE #{MEMID} AND PASS LIKE #{PASS}
+		WHERE MEMID LIKE #{memid} AND PASS LIKE #{pass}
 	</select>
-	<select id="add" resultType="com.gms.web.domain.MemberDTO">
-		INSERT INTO MEMBER (MEMID, PASS, MEMNAME, SSN, TEAMID, ROLL, SUBJECT)
-		VALUES(#{MEMID},#{PASS},#{MEMNAME},#{SSN},#{TEAMID},#{ROLL},#{SUBJECT})
+	<select id="add" >
+		INSERT INTO MEMBER (MEMID, PASS, MEMNAME, AGE, SSN, TEAMID, ROLL, GENDER, SUBJECT)
+		VALUES (#{memid},#{pass},#{memname},#{age},#{ssn},#{teamid},#{roll},#{gender},#{subject})
 	</select>
-	<select id="update" resultType="com.gms.web.domain.MemberDTO">
-		UPDATE MEMBER SET %s = ?, %s = ?, %s = ? WHERE MEM_ID LIKE #{MEMID}
+	<select id="update" >
+	UPDATE MEMBER SET PASS = #{pass} %s TEAMID #{teamid} ROLL = #{roll} WHERE MEMID LIKE #{memid} ";
 	</select>
-	<select id="delete" resultType="com.gms.web.domain.MemberDTO">
-		DELETE FROM MEMBER WHERE MEM_ID LIKE #{MEMID} AND PASSWORD LIKE #{PASS}
+	<select id="delete" >
+		DELETE FROM MEMBER WHERE MEMID LIKE #{memid} AND PASSWORD LIKE #{pass}
 	</select>
 
 </mapper>

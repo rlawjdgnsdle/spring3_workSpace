@@ -17,10 +17,10 @@ public class MariaDBConn {
 					 "mariadb",
 					 "mariadb");
 			stmt = conn.createStatement();
-			String sql = String.format("SELECT MEM_ID FROM MEMBER WHERE MEM_ID LIKE 'CVS030' ");
+			String sql = String.format("SELECT MEMID FROM MEMBER WHERE MEMID LIKE 'CVS030' ");
 			ResultSet rs = stmt.executeQuery(sql);
 			if(rs.next()) {
-				s = rs.getString("MEM_ID");
+				s = rs.getString("MEMID");
 			}else {
 				s = "연결 실패";
 				}

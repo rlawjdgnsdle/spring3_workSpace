@@ -42,7 +42,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> ${member.memname} 의 마이페이지 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a id="logout_btn" href="#">로그아웃</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a id="updateForm" href="#">내 정보 수정</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>

@@ -1,9 +1,9 @@
 package com.gms.web.service.impl;
 
-import java.util.List;
-
-import java.util.Map;
-
+import java.text.SimpleDateFormat;
+import java.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,13 +15,23 @@ import com.gms.web.service.MemberService;
 public class MemberServiceImpl implements MemberService {
 	@Autowired
 	MemberDAO memberDAO;
-
+	private static final Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 	@Override
 	public void add(MemberDTO p) {
-		System.out.println("==add Retrieve==");
+		logger.info("==ServiceImpl==");
+		String ssn = p.getSsn();
+		System.out.println("ssn : "+ssn);
+		String gender = String.valueOf(ssn.charAt(7));
+		if(Integer.parseInt(gender)+2%2==1) {
+			gender = "남";
+		}else {
+			gender = "여";
+		}
+		p.setAge(String.valueOf(
+				Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date()))+ 1
+				- (Integer.parseInt(ssn.substring(0,2)) + 1900)));
+		p.setGender(gender);
 		memberDAO.add(p);
-		
-		
 	}
 
 	@Override
@@ -49,9 +59,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void modify(Map<?, ?> p) {
-		// TODO Auto-generated method stub
-
+	public void modify(MemberDTO member) {
+		memberDAO.update(member);
 	}
 
 	@Override

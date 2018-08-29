@@ -5,9 +5,9 @@
 	<div id="content-box-search">
 		<select name="option" id="option">
 			<option value="none">검색조건</option>
-			<option value="mem_id">아이디</option>
+			<option value="memid">아이디</option>
 			<option value="name">이 름</option>
-			<option value="team_id">팀 명</option>
+			<option value="teamid">팀 명</option>
 		</select>
 		<input type="text" id="word" placeholder="검색어 입력"/>
 		<input type="button" id="searchBtn" value="검색"/>

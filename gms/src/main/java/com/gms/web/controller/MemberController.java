@@ -25,11 +25,10 @@ public class MemberController {
 	@Autowired MemberService memberSerivce;  // 싱글톤에있는걸 GETINSTANCE 한것?
 	// MemberDTO m = new MemberDTO(); ← 최 악 의 코 드 IOC에선 스프링이 객체를 다 만드는데 개발자가 만들이유가 없습니다
 	
-	@RequestMapping("/add"
-				)
-	public void add(@ModelAttribute MemberDTO member, Model model){
+	@RequestMapping("/add")
+	public void add(@ModelAttribute MemberDTO member){
 		System.out.println("name is "+member.getMemname());
-		model.addAttribute("member", model);
+		memberSerivce.add(member);
 	}
 	
 	@RequestMapping("/list")
@@ -46,7 +45,9 @@ public class MemberController {
 	public void count() {}
 
 	@RequestMapping("/modify")
-	public void modify() {}
+	public void modify(@ModelAttribute MemberDTO member) {
+		memberSerivce.modify(member);
+	}
 
 	@RequestMapping("/remove")
 	public void remove() {}
@@ -63,10 +64,10 @@ public class MemberController {
 		logger.info("로그인폼에서 받아온 Pass getParameter : "+pass);
 		Map<String, String> p = new HashMap<>();
 		
-		p.put("MEMID", memid);
+		p.put("memid", memid);
 		MemberDTO m = memberSerivce.retrieve(p);
 		logger.info("============================");
-		logger.info("검색된(DB) 멤버 아이디는 : "+m.getMemId());
+		logger.info("검색된(DB) 멤버 아이디는 : "+m.getMemid());
 		logger.info("검색된(DB) 멤버 패스워드는 : "+m.getPass());
 		logger.info("============================");
 		if(pass.equals(m.getPass())) {

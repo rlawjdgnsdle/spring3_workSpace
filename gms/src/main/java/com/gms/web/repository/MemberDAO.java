@@ -7,11 +7,12 @@ import com.gms.web.domain.MemberDTO;
 
 public interface MemberDAO {
 	public void add(MemberDTO p);
-	public List<?> selectlist(Map<?, ?>p);
-	public List<?> selectSome(Map<?, ?>p);
-	public MemberDTO selectOne(Map<?, ?>p);
-	public int count(Map<?, ?>p);
-	public void update(Map<?, ?>p);
-	public void delete(Map<?, ?>p);
+	public List<?> selectList(Map<?,?>p);
+	public List<?> selectSome(Map<?,?>p);
+	public MemberDTO selectOne(Map<?, ?> p);
+	public int count(Map<?,?>p);
+	public void update(MemberDTO p);
+	public void delete(MemberDTO p);
 	public MemberDTO login(Map<?, ?>p);
+
 }
